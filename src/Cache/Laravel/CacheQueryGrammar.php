@@ -5,7 +5,8 @@ namespace Cache\Laravel;
 use Illuminate\Database\Query\Grammars\SqlServerGrammar;
 use Illuminate\Database\Query\Builder;
 
-class CacheQueryGrammar extends SqlServerGrammar {
+class CacheQueryGrammar extends SqlServerGrammar
+{
 
     /**
      * The keyword identifier wrapper format.

@@ -4,7 +4,15 @@ namespace Cache\Laravel;
 
 use Illuminate\Database\Connection;
 
-class CacheConnection extends Connection {
+class CacheConnection extends Connection
+{
+
+	/**
+	 * The default fetch mode of the connection.
+	 *
+	 * @var int
+	 */
+	protected $fetchMode = \PDO::FETCH_CLASS;
 
 	/**
 	 * Get the default query grammar instance.
@@ -27,6 +35,16 @@ class CacheConnection extends Connection {
 	}
 
 	/**
+	 * Get the default post processor instance.
+	 *
+	 * @return \Illuminate\Database\Query\Processors\Processor
+	 */
+	protected function getDefaultPostProcessor()
+	{
+		return new CacheProcessor;
+	}
+
+	/**
 	 * Run a select statement against the database.
 	 *
 	 * @param  string  $query
@@ -42,8 +60,6 @@ class CacheConnection extends Connection {
 			// For select statements, we'll simply execute the query and return an array
 			// of the database result set. Each element in the array will be a single
 			// row from the database table, and will either be an array or objects.
-
-			// dd($query);
 
 			$statement = $me->getPdo()->prepare($query);
 
