@@ -1,6 +1,6 @@
 <?php 
 
-namespace Laravelcache;
+namespace Cache\Laravel;
 
 use Illuminate\Database\Connectors\Connector;
 use Illuminate\Database\Connectors\ConnectorInterface;

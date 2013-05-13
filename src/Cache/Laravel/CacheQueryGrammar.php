@@ -1,6 +1,6 @@
 <?php 
 
-namespace Laravelcache;
+namespace Cache\Laravel;
 
 use Illuminate\Database\Query\Grammars\SqlServerGrammar;
 use Illuminate\Database\Query\Builder;

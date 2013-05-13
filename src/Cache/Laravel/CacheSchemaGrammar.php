@@ -1,6 +1,6 @@
 <?php 
 
-namespace Laravelcache;
+namespace Cache\Laravel;
 
 use Illuminate\Support\Fluent;
 use Illuminate\Database\Schema\Blueprint;
